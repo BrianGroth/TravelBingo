@@ -14,22 +14,29 @@
 
 <main class="admin-container">
   <!-- Explanation for the admin -->
-  <p>Enter a name for the Bingo board and the words for the game.  
-  The name will appear on the player page.  
-  The words should be separated by new lines or commas.  
-  You must provide at least 25 words.  
-  After saving, go to the player page to see the game board.</p>
+  <p>
+    Enter a name for the Bingo board and the words for the game.<br>
+    The name will appear on the player page as the "Game Name".<br>
+    The words should be separated by new lines or commas, and you must provide at least 25 words.<br>
+    After saving, open the player page (index.html) to see the updated game.
+  </p>
   
-  <!-- Input for board name -->
-  <label for="boardName"><strong>Board Name:</strong></label><br/>
-  <input type="text" id="boardName" class="admin-textinput" placeholder="e.g., Summer Vacation Trip" /><br/><br/>
+  <!-- Input field for the board name -->
+  <input type="text" id="boardName" class="admin-input" placeholder="Enter a Board Name" style="width:100%;margin-bottom:1em;"/>
 
-  <!-- Input for word list -->
-  <textarea id="wordList" placeholder="Enter words here..." class="admin-textarea"></textarea><br/><br/>
+  <!-- Text area for word list -->
+  <textarea id="wordList" placeholder="Enter words here..." class="admin-textarea"></textarea>
 
-  <button id="saveWords" class="admin-button">Save Words and Name</button>
+  <!-- Save button -->
+  <button id="saveWords" class="admin-button">Save Words & Name</button>
+
+  <!-- Status message for admin actions -->
   <p id="statusMsg" class="admin-status"></p>
-  <p>Open <a href="index.html">the player page</a> to view the board.</p>
+
+  <p>
+    Go to the <a href="index.html">player page</a> to see the updated board.
+  </p>
+
 </main>
 
 <script src="admin.js"></script>
