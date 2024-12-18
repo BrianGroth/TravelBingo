@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Travel Bingo - Admin</title>
+<link rel="stylesheet" href="style.css"/>
+</head>
+<body class="admin-page">
+
+<header class="admin-header">
+  <h1>Travel Bingo Admin</h1>
+</header>
+
+<main class="admin-container">
+  <p>Enter the words for the Bingo game, separated by new lines or commas. You can provide more than 25 words, and the game will randomly choose from them.</p>
+  <textarea id="wordList" placeholder="Enter words here..." class="admin-textarea"></textarea>
+  <button id="saveWords" class="admin-button">Save Words</button>
+  <p id="statusMsg" class="admin-status"></p>
+  <p>After saving, go to <a href="index.html">the player page</a> to see the game board.</p>
+</main>
+
+<script src="admin.js"></script>
+</body>
+</html>
