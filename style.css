@@ -1,9 +1,8 @@
 /* style.css
-   This file contains shared styling for both the admin and player pages,
-   with a modern, clean design. Comments are added for clarity.
+   No major changes from previous versions. Just a clean layout.
+   Works for both admin and player pages.
 */
 
-/* Resetting default margins & paddings */
 body, html {
   margin: 0;
   padding: 0;
