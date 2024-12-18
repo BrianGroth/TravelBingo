@@ -1,58 +1,47 @@
 // admin.js
-// This script handles the admin panel functionality. It allows the admin
-// to set a board name and a list of words, which are stored in localStorage
-// for use by the player page.
+// This script helps the admin generate a JSON config that can be placed in config.json.
+// It does not save to localStorage anymore. Instead, the admin manually updates config.json in the repository.
 
-// Get references to DOM elements in the admin page
-const saveButton = document.getElementById('saveWords');
+const generateButton = document.getElementById('generateConfig');
 const wordListArea = document.getElementById('wordList');
 const boardNameInput = document.getElementById('boardName');
 const statusMsg = document.getElementById('statusMsg');
+const jsonOutput = document.getElementById('jsonOutput');
 
-// On page load, load any existing settings from localStorage if available
-document.addEventListener('DOMContentLoaded', () => {
-  const storedWords = localStorage.getItem('bingoWords');
-  const storedName = localStorage.getItem('bingoBoardName');
-
-  // If we have saved words, put them into the text area
-  if (storedWords) {
-    const words = JSON.parse(storedWords);
-    wordListArea.value = words.join('\n');
-  }
-
-  // If we have a saved board name, set it in the input field
-  if (storedName) {
-    boardNameInput.value = storedName;
-  }
-});
-
-// When the admin clicks the save button
-saveButton.addEventListener('click', () => {
+generateButton.addEventListener('click', () => {
   const text = wordListArea.value.trim();
   const boardName = boardNameInput.value.trim();
 
-  // Validate the words
+  if (!boardName) {
+    statusMsg.style.color = 'red';
+    statusMsg.textContent = "Please provide a board name.";
+    return;
+  }
+
   if (!text) {
     statusMsg.style.color = 'red';
     statusMsg.textContent = "No words provided.";
     return;
   }
 
-  // Split words by newlines or commas, trim them, and remove duplicates
+  // Split words by newlines or commas
   let words = text.split(/[\n,]+/).map(w => w.trim()).filter(Boolean);
-  words = Array.from(new Set(words));
+  words = Array.from(new Set(words)); // remove duplicates
 
-  // Ensure there are at least 25 words
   if (words.length < 25) {
     statusMsg.style.color = 'red';
     statusMsg.textContent = "You must provide at least 25 words.";
     return;
   }
 
-  // Save the words and board name to localStorage
-  localStorage.setItem('bingoWords', JSON.stringify(words));
-  localStorage.setItem('bingoBoardName', boardName);
+  // Create a JSON config object
+  const config = {
+    boardName: boardName,
+    words: words
+  };
 
+  // Display the JSON for the admin to copy
   statusMsg.style.color = 'green';
-  statusMsg.textContent = "Words and board name saved successfully!";
+  statusMsg.textContent = "JSON generated below. Copy and paste into config.json in your repo.";
+  jsonOutput.textContent = JSON.stringify(config, null, 2);
 });
