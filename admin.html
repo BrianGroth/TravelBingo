@@ -13,30 +13,31 @@
 </header>
 
 <main class="admin-container">
-  <!-- Explanation for the admin -->
+  <!-- Instructions for admin -->
   <p>
-    Enter a name for the Bingo board and the words for the game.<br>
-    The name will appear on the player page as the "Game Name".<br>
-    The words should be separated by new lines or commas, and you must provide at least 25 words.<br>
-    After saving, open the player page (index.html) to see the updated game.
+    Enter a game name and a list of words (at least 25) below.  
+    Then click "Generate Config" to produce a JSON object.  
+    Copy the generated JSON and update the <code>config.json</code> file in your GitHub repository with this new JSON.  
+    After you commit the changes to GitHub, the player page will automatically use the updated configuration.
   </p>
-  
-  <!-- Input field for the board name -->
+
+  <!-- Input for the board name -->
   <input type="text" id="boardName" class="admin-input" placeholder="Enter a Board Name" style="width:100%;margin-bottom:1em;"/>
 
   <!-- Text area for word list -->
   <textarea id="wordList" placeholder="Enter words here..." class="admin-textarea"></textarea>
 
-  <!-- Save button -->
-  <button id="saveWords" class="admin-button">Save Words & Name</button>
+  <!-- Button to generate JSON config -->
+  <button id="generateConfig" class="admin-button">Generate Config</button>
 
-  <!-- Status message for admin actions -->
+  <!-- Status message and JSON output -->
   <p id="statusMsg" class="admin-status"></p>
+  <pre id="jsonOutput" style="white-space:pre-wrap;background:#f0f0f0;padding:10px;border-radius:4px;margin-top:1em;"></pre>
 
   <p>
-    Go to the <a href="index.html">player page</a> to see the updated board.
+    Once you have the JSON, copy it and manually paste it into <code>config.json</code> in your repository.  
+    Commit and push the changes. The player page will then reflect the new configuration.
   </p>
-
 </main>
 
 <script src="admin.js"></script>
