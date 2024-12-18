@@ -1,0 +1,31 @@
+body {
+  font-family: sans-serif;
+  text-align: center;
+  padding: 0;
+  margin: 0;
+}
+
+header {
+  background: #efefef;
+  padding: 1em;
+}
+
+.bingo-board {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  max-width: 400px;
+  margin: 1em auto;
+  gap: 5px;
+}
+
+.bingo-square {
+  border: 1px solid #333;
+  padding: 20px;
+  background: #fff;
+  cursor: pointer;
+}
+
+.bingo-square.marked {
+  background: #4caf50;
+  color: #fff;
+}
