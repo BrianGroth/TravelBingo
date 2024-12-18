@@ -1,20 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
+<meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Travel Bingo</title>
-<link rel="stylesheet" href="style.css" />
+<link rel="stylesheet" href="style.css"/>
 </head>
-<body>
-  <header>
-    <h1>Travel Bingo</h1>
-    <button id="generate">Generate New Card</button>
-    <button id="reset">Reset Marks</button>
-  </header>
-  <main>
-    <div class="bingo-board" id="bingoBoard"></div>
-  </main>
-  <script src="script.js"></script>
+<body class="player-page">
+<header class="player-header">
+  <h1>Travel Bingo</h1>
+  <button id="generate" class="top-button">Generate New Card</button>
+  <button id="reset" class="top-button">Reset Marks</button>
+</header>
+
+<main class="game-container">
+  <div class="bingo-board" id="bingoBoard"></div>
+</main>
+
+<!-- Modal for Win Message -->
+<div class="modal-overlay" id="winModal" style="display:none;">
+  <div class="modal-content">
+    <h2>Congratulations!</h2>
+    <p>You got Bingo!</p>
+    <button id="closeModal" class="admin-button">Close</button>
+  </div>
+</div>
+
+<script src="script.js"></script>
 </body>
 </html>
