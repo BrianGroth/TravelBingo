@@ -13,19 +13,19 @@
 </header>
 
 <main class="admin-container">
-  <!-- Instructions for admin -->
+  <!-- Instructions for the admin -->
   <p>
-    Enter a game name and a list of words (at least 25) below.  
-    Then click "Generate Config" to produce a JSON object.  
-    Copy the generated JSON and update the <code>config.json</code> file in your GitHub repository with this new JSON.  
-    After you commit the changes to GitHub, the player page will automatically use the updated configuration.
+    Enter a game name and a list of words (at least 25).  
+    Then click "Generate Config" to produce JSON.  
+    Copy the generated JSON and paste it into the <code>config.json</code> file in your GitHub repository.  
+    Commit and push your changes. The player page will then use the updated configuration.
   </p>
 
   <!-- Input for the board name -->
   <input type="text" id="boardName" class="admin-input" placeholder="Enter a Board Name" style="width:100%;margin-bottom:1em;"/>
 
   <!-- Text area for word list -->
-  <textarea id="wordList" placeholder="Enter words here..." class="admin-textarea"></textarea>
+  <textarea id="wordList" placeholder="Enter words here (at least 25)..." class="admin-textarea"></textarea>
 
   <!-- Button to generate JSON config -->
   <button id="generateConfig" class="admin-button">Generate Config</button>
@@ -35,8 +35,7 @@
   <pre id="jsonOutput" style="white-space:pre-wrap;background:#f0f0f0;padding:10px;border-radius:4px;margin-top:1em;"></pre>
 
   <p>
-    Once you have the JSON, copy it and manually paste it into <code>config.json</code> in your repository.  
-    Commit and push the changes. The player page will then reflect the new configuration.
+    After copying the JSON, update your <code>config.json</code> file in the repository. Once done, reload the player page to see changes.
   </p>
 </main>
 
